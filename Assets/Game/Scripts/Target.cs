@@ -35,6 +35,6 @@ public class Target : MonoBehaviour
 
     Vector3 RandomTorque()
     {
-        return new Vector3(Random.Range(-maxTorque, maxTorque), Random.Range(-maxTorque, maxTorque), Random.Range(-maxTorque, maxTorque));
+        return new Vector3(0, Random.Range(-maxTorque, maxTorque), Random.Range(-maxTorque, maxTorque));
     }
 }
