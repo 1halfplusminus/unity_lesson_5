@@ -48,12 +48,15 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Spawn();
+    }
+    public void Spawn()
+    {
         foreach (var spawnItem in spawnables)
         {
             StartCoroutine(spawnItem.Spawn(spawnZones));
         }
     }
-
     SpawnZone GetRandomZone()
     {
         var index = Random.Range(0, spawnZones.Count);
@@ -63,5 +66,19 @@ public class SpawnManager : MonoBehaviour
     {
         enabled = false;
         StopAllCoroutines();
+    }
+    public void DestroyAll()
+    {
+        foreach (var spawnable in spawnables)
+        {
+            spawnable.DestroyAll();
+        }
+    }
+    public void DisableAll()
+    {
+        foreach (var spawnable in spawnables)
+        {
+            spawnable.DisableAll();
+        }
     }
 }

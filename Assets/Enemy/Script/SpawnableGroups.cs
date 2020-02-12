@@ -21,7 +21,7 @@ public class SpawnableGroups : MonoBehaviour
     public OnSpawnEvent onSpawn = new OnSpawnEvent();
 
     public OnSpawnEvent onDestroy = new OnSpawnEvent();
-
+    public OnMouseDown onMouseDown;
     public UnityEvent onGroupDestroy;
 
     public UnityEvent onGroupSpawn;
@@ -29,10 +29,14 @@ public class SpawnableGroups : MonoBehaviour
     {
         foreach (var item in spawnInstances)
         {
+            item.onMouseDown.AddListener((GameObject instance) =>
+            {
+                onMouseDown.Invoke(instance);
+            });
             item.onSpawn.AddListener((GameObject instance) =>
             {
-                onSpawn.Invoke(instance);
                 instances.Add(instance);
+                onSpawn.Invoke(instance);
             });
             item.onDestroy.AddListener((GameObject instance) =>
             {

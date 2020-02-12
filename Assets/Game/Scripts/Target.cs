@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
 
 public class Target : MonoBehaviour
 {
@@ -10,6 +12,7 @@ public class Target : MonoBehaviour
     public float maxSpeed = 16f;
 
     public float maxTorque = 10.0f;
+
     void Start()
     {
         targetRb = GetComponent<Rigidbody>();

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5983684613823128449}
   - component: {fileID: 5983684613823128448}
   - component: {fileID: 5983684613823128455}
+  - component: {fileID: 4286613900326178903}
   m_Layer: 0
   m_Name: Malango
   m_TagString: Untagged
@@ -128,3 +129,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.4399996, y: 4.4399996, z: 0.19999999}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4286613900326178903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5983684613823128452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dcb41ece7d4c4f4d9b1c337279d684b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  scoreRange:
+    min: -1
+    max: 1

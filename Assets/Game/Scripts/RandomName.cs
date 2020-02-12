@@ -8,16 +8,21 @@ public class RandomName : MonoBehaviour
 
     public string[] names = new string[] { "ECash", "eCash", "CagouCoin", "Kash", "eKash", "PacifiqueCoin" };
     // Start is called before the first frame update
+    private string currentName;
     void Start()
     {
         StartCoroutine(UpdateName());
     }
 
+    public string GetCurrentName()
+    {
+        return currentName;
+    }
     IEnumerator UpdateName()
     {
-        yield return new WaitForSeconds(5f);
         var randomIndex = Random.Range(0, names.Length);
-        GetComponent<TextMeshProUGUI>().text = names[randomIndex] + " : ";
+        currentName = names[randomIndex];
+        yield return new WaitForSeconds(5f);
         yield return UpdateName();
     }
 }

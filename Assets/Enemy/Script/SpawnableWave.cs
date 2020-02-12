@@ -69,4 +69,19 @@ public class SpawnableWave : MonoBehaviour
         onWaveDestroy.Invoke();
         Debug.Log(name + " destroyed");
     }
+
+    public void DestroyAll()
+    {
+        foreach (var instance in instances)
+        {
+            Destroy(instance);
+        }
+    }
+    public void DisableAll()
+    {
+        foreach (var instance in instances)
+        {
+            instance.SetActive(false);
+        }
+    }
 }
