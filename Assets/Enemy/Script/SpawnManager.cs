@@ -45,10 +45,14 @@ public class SpawnManager : MonoBehaviour
 
     public List<SpawnableWave> spawnables = new List<SpawnableWave>();
 
+    public bool spawnOnStart = true;
     // Start is called before the first frame update
     void Start()
     {
-        Spawn();
+        if (spawnOnStart)
+        {
+            Spawn();
+        }
     }
     public void Spawn()
     {
