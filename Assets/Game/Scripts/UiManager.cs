@@ -22,6 +22,12 @@ public class UiManager : MonoBehaviour
     }
     public void DisplayGameOverScreen()
     {
+        StartCoroutine(DisplayGameOverCorroutine());
+    }
+
+    private IEnumerator DisplayGameOverCorroutine()
+    {
+        yield return new WaitForSeconds(0.5f);
         gameOverScreen.SetActive(true);
         startScreen.SetActive(false);
         gameScreen.SetActive(false);
